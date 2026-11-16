@@ -1,0 +1,7 @@
+# Proprietary blobs are extracted from a local stock dump and are not
+# redistributed in this repository. Run extract-files.sh to populate it.
+proprietary/
+
+# Editor/OS noise
+.DS_Store
+*.swp
