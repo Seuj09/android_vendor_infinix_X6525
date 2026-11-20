@@ -4748,7 +4748,7 @@ PRODUCT_PACKAGES += \
     manifest_media_c2_V1_1_unisoc \
     manifest_tneengine \
     network-default \
-    rkp_factory_extraction_tool \
+    prebuilt_rkp_factory_extraction_tool \
     shared-file-region-aidl-cpp.vendor \
     soter_default \
     thermal.default \

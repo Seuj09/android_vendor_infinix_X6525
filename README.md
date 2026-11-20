@@ -1,78 +1,28 @@
-# Infinix Smart 8 (X6525) — vendor tree
+# vendor/infinix/X6525
 
-Vendor makefiles for the **Infinix Smart 8 X6525** (Unisoc T606 / UMS9230), for
-use with the LineageOS 20 device tree:
+This directory is **generated** by `device/infinix/X6525/extract-files.sh` from
+your own dump. It is intentionally empty in this scaffold.
 
-- Device tree: <https://github.com/Seuj09/android_device_infinix_X6525> (`lineage-20`)
-- Vendor tree: this repository (`lineage-20`)
-
-LineageOS 20 (Android 13, SDK 33) is the target, matching the stock vendor
-blobs. The device currently builds and boots with this tree.
-
-## Blobs are not in this repository
-
-`proprietary/` is git-ignored. Only the generated makefiles are tracked here;
-the binaries are extracted from your own stock dump, so nothing proprietary is
-redistributed.
-
-Generated files that are tracked:
-
-```
-Android.bp                  # Soong prebuilt modules
-Android.mk                  # legacy make glue
-BoardConfigVendor.mk        # board flags (required by BoardConfig.mk)
-X6525-vendor.mk             # PRODUCT_COPY_FILES / product packages
-```
-
-## Setting up
-
-From the root of a LineageOS 20 source tree:
+After running:
 
 ```bash
-git clone https://github.com/Seuj09/android_device_infinix_X6525 \
-    -b lineage-20 device/infinix/X6525
-git clone https://github.com/Seuj09/android_vendor_infinix_X6525 \
-    -b lineage-20 vendor/infinix/X6525
+python3 tools/gen-blob-list.py ~/x6525-dump -o device/infinix/X6525/proprietary-files.txt
+device/infinix/X6525/extract-files.sh ~/x6525-dump
 ```
 
-Then extract the blobs from a stock dump:
+you should see:
 
-```bash
-# dump layout: system/ system_ext/ product/ vendor/ odm/ ...
-device/infinix/X6525/extract-files.sh /path/to/x6525-dump
+```
+Android.bp
+Android.mk
+BoardConfigVendor.mk        <- required by BoardConfig.mk
+X6525-vendor.mk             <- inherited by device.mk
+proprietary/                <- the blobs
 ```
 
-`extract-files.sh` runs the usual LineageOS `extract_utils.sh` flow using
-`device/infinix/X6525/proprietary-files.txt` and writes into `proprietary/`.
+Until `BoardConfigVendor.mk` exists, the build will stop with an error about a
+missing file. That is expected.
 
-To regenerate the blob list from a fresh dump (for example after an OTA):
-
-```bash
-python3 tools/gen-blob-list.py /path/to/x6525-dump \
-    -o device/infinix/X6525/proprietary-files.txt
-```
-
-The dump is easiest to produce from the stock `super` partition:
-
-```bash
-lpunpack super.img /path/to/dump
-```
-
-## Building
-
-```bash
-source build/envsetup.sh
-lunch lineage_X6525-userdebug
-mka bacon
-```
-
-## Notes
-
-- Dynamic partitions: `system system_ext vendor product odm vendor_dlkm`.
-- A/B with virtual A/B; `boot` holds the GKI kernel, `vendor_boot` holds the
-  DTB and vendor ramdisk, plus a separate `dtbo`.
-- The makefiles here were generated from the stock dump and are kept in sync
-  with `device/infinix/X6525`. If you change one side, regenerate both.
-
-Blob licensing: these files are proprietary to Infinix/Transsion/Unisoc. Use
-them only on hardware you own.
+Keep this directory out of a public git repo unless you have redistribution
+rights for the blobs. Most X6525 trees keep only the makefiles in git and
+regenerate `proprietary/` locally.

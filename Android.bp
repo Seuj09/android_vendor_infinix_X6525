@@ -213,19 +213,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.audio.service.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.audio.service.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.audio.service",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.audio.service"],
-	required: ["x6525.android.hardware.audio.service.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "32",
 	prefer: true,
@@ -236,20 +227,11 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.face-default.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/face-default.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.biometrics.face-service.example",
 	owner: "infinix",
 	stem: "vendor.sprd.hardware.biometrics.face-service",
 	srcs: ["proprietary/vendor/bin/hw/vendor.sprd.hardware.biometrics.face-service"],
-	required: ["x6525.face-default.rc"],
 	shared_libs: [
 		"android.hardware.biometrics.common-V2-ndk",
 		"android.hardware.biometrics.face-V2-ndk",
@@ -264,19 +246,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.biometrics.fingerprint@2.1-service.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.biometrics.fingerprint@2.1-service",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service"],
-	required: ["x6525.android.hardware.biometrics.fingerprint@2.1-service.rc"],
 	shared_libs: ["android.hardware.biometrics.fingerprint@2.1"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
@@ -302,19 +275,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.camera.provider@2.4-service.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.camera.provider@2.4-service.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.camera.provider@2.4-service",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.camera.provider@2.4-service"],
-	required: ["x6525.android.hardware.camera.provider@2.4-service.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "32",
 	prefer: true,
@@ -325,19 +289,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.drm-service-lazy.clearkey.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.drm-service-lazy.clearkey.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.drm-service-lazy.clearkey",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.drm-service-lazy.clearkey"],
-	required: ["x6525.android.hardware.drm-service-lazy.clearkey.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
 	prefer: true,
@@ -364,19 +319,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.graphics.composer@2.4-service.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.graphics.composer@2.4-service.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.graphics.composer@2.4-service",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.graphics.composer@2.4-service"],
-	required: ["x6525.android.hardware.graphics.composer@2.4-service.rc"],
 	shared_libs: [
 		"android.hardware.graphics.composer@2.1",
 		"android.hardware.graphics.composer@2.1-resources",
@@ -396,19 +342,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.health-service.example.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.health-service.example.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.health-service.example",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.health-service.example"],
-	required: ["x6525.android.hardware.health-service.example.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
 	prefer: true,
@@ -459,19 +396,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.power.stats-default.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/power.stats-default.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.power.stats-service.example",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.power.stats-service.example"],
-	required: ["x6525.power.stats-default.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
 	prefer: true,
@@ -501,19 +429,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.sensors-service-multihal.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.sensors-service-multihal.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.sensors-service.multihal",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.sensors-service.multihal"],
-	required: ["x6525.android.hardware.sensors-service-multihal.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
 	prefer: true,
@@ -524,19 +443,10 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
-prebuilt_etc {
-	name: "x6525.android.hardware.usb-service.example.rc",
-	owner: "infinix",
-	src: "proprietary/vendor/etc/init/android.hardware.usb-service.example.rc",
-	sub_dir: "init",
-	soc_specific: true,
-}
-
 cc_prebuilt_binary {
 	name: "android.hardware.usb-service.example",
 	owner: "infinix",
 	srcs: ["proprietary/vendor/bin/hw/android.hardware.usb-service.example"],
-	required: ["x6525.android.hardware.usb-service.example.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
 	prefer: true,
@@ -554,6 +464,19 @@ cc_prebuilt_binary {
 	init_rc: ["proprietary/vendor/etc/init/hostapd.android.rc"],
 	relative_install_path: "hw",
 	compile_multilib: "64",
+	check_elf_files: false,
+	strip: {
+		none: true,
+	},
+	soc_specific: true,
+}
+
+cc_prebuilt_binary {
+	name: "prebuilt_rkp_factory_extraction_tool",
+	owner: "infinix",
+	srcs: ["proprietary/vendor/bin/rkp_factory_extraction_tool"],
+	compile_multilib: "64",
+	prefer: true,
 	check_elf_files: false,
 	strip: {
 		none: true,
@@ -586,7 +509,6 @@ cc_prebuilt_binary {
 	],
 	relative_install_path: "hw",
 	compile_multilib: "64",
-	prefer: true,
 	check_elf_files: false,
 	strip: {
 		none: true,
@@ -711,6 +633,27 @@ cc_prebuilt_library_shared {
 		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libtinycompress.so"],
+		},
+	},
+	compile_multilib: "both",
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "thermal.default",
+	owner: "infinix",
+	relative_install_path: "hw",
+	prefer: true,
+	check_elf_files: false,
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/hw/thermal.default.so"],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/hw/thermal.default.so"],
 		},
 	},
 	compile_multilib: "both",
