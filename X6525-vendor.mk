@@ -4763,8 +4763,7 @@ PRODUCT_PACKAGES += \
     vendor.sprd.hardware.gnss@2.2-service \
     vendor.sprd.hardware.tranHwInfo@1.0 \
     wpa_supplicant \
-    android.hardware.wifi@1.0-service-vintf \
-    android.hardware.wifi.supplicant-vintf
+    android.hardware.wifi@1.0-service-vintf
 
 PRODUCT_COPY_FILES += \
     vendor/infinix/X6525/proprietary/vendor/lib/libprotobuf-cpp-lite-3.9.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-3.9.1.so \
