@@ -14,6 +14,24 @@ prebuilt_etc_xml {
 	soc_specific: true,
 }
 
+prebuilt_etc_xml {
+	name: "android.hardware.wifi@1.0-service-vintf",
+	owner: "infinix",
+	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "android.hardware.wifi.supplicant-vintf",
+	owner: "infinix",
+	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
 
 
 
